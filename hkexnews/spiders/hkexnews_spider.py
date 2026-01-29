@@ -12,10 +12,10 @@ class HkexnewsSpiderSpider(scrapy.Spider):
             '__EVENTTARGET': 'btnSearch',
             '__VIEWSTATE': response.xpath('//*[@name="__VIEWSTATE"]/@value').extract_first(),
             '__VIEWSTATEGENERATOR': response.xpath('//*[@name="__VIEWSTATEGENERATOR"]/@value').extract_first(),
-            'today': '20220205',
+            'today': '20260129',
             'sortBy': 'shareholding',
             'sortDirection': 'desc',
-            'txtShareholdingDate': '2022/02/04',
+            'txtShareholdingDate': '2026/01/28',
             'txtStockCode': '00001'
         }
 
