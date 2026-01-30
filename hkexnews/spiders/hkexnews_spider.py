@@ -25,7 +25,7 @@ class HkexnewsSpiderSpider(scrapy.Spider):
 
 
     def parse_result(self, response):
-        self.logger.info("HTML snippet:\n%s", response.text[:2000])
+        self.logger.info("HTML snippet:\n%s", response.text)
         table_rows = response.xpath('//*[@id="pnlResultNormal"]//table/tbody/tr')
         self.logger.info("Number of table rows: %d", len(table_rows))
         for row in table_rows:
