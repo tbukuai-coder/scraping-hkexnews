@@ -4,7 +4,7 @@ from scrapy.http import FormRequest
 class HkexnewsSpiderSpider(scrapy.Spider):
     name = 'hkexnews_spider'
     allowed_domains = ['hkexnews.hk']
-    start_urls = ['https://www.hkexnews.hk/sdw/search/searchsdw.aspx']
+    start_urls = ['https://www3.hkexnews.hk/sdw/search/searchsdw.aspx']
 
     def parse(self, response):
 
@@ -19,7 +19,7 @@ class HkexnewsSpiderSpider(scrapy.Spider):
             'txtStockCode': '00001'
         }
         self.logger.info("DATA: %s", data) 
-        return [FormRequest("https://www.hkexnews.hk/sdw/search/searchsdw.aspx",
+        return [FormRequest("https://www3.hkexnews.hk/sdw/search/searchsdw.aspx",
                                formdata=data,
                                callback=self.parse_result)]
 
