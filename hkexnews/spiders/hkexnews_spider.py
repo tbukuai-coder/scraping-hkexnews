@@ -10,15 +10,15 @@ class HkexnewsSpiderSpider(scrapy.Spider):
 
         data = {
             '__EVENTTARGET': 'btnSearch',
-            '__VIEWSTATE': response.xpath('//*[@name="__VIEWSTATE"]/@value').extract_first(),
-            '__VIEWSTATEGENERATOR': response.xpath('//*[@name="__VIEWSTATEGENERATOR"]/@value').extract_first(),
+            '__VIEWSTATE': response.xpath('//*[@id="__VIEWSTATE"]/@value').extract_first(),
+            '__VIEWSTATEGENERATOR': response.xpath('//*[@id="__VIEWSTATEGENERATOR"]/@value').extract_first(),
             'today': '20260129',
             'sortBy': 'shareholding',
             'sortDirection': 'desc',
             'txtShareholdingDate': '2026/01/28',
             'txtStockCode': '00001'
         }
-
+        self.logger.info("DATA: %s", data) 
         return [FormRequest("https://www.hkexnews.hk/sdw/search/searchsdw.aspx",
                                formdata=data,
                                callback=self.parse_result)]
